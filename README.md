@@ -1,1 +1,1 @@
-for fun
+npm i @rednexie/cache.db
