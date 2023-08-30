@@ -76,6 +76,28 @@ function isEmpty() {
   return data.size === 0;
 }
 
+
+function type(key) {
+  // Returns the type of the value associated with the key
+  const value = data.get(key);
+  if (value === null || value === undefined) {
+    return 'null';
+  }
+  if (Array.isArray(value)) {
+    return 'array';
+  }
+  return typeof value;
+}
+
+
+function deleteAll(keys) {
+  // Deletes all the keys from the map
+  keys.forEach(key => {
+    data.delete(key);
+  });
+}
+
+
 function expire(key, time) {
   return new Promise((resolve) => {
     setTimeout(() => {
