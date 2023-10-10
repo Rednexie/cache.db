@@ -34,6 +34,11 @@ function all(){
   return Array.from(data, ([key, value]) => ({ [key]: value }));
 }
 
+
+function alls() {
+  return Array.from(data, ([k, val]) => ({ key: k, value: val }));
+}
+
 function obj(){
   // {..data}
   return Array.from(data, ([key, value]) => ({ [key]: value }));
@@ -54,6 +59,10 @@ function forEach(callback) {
   data.forEach((value, key) => {
     callback(value, key);
   });
+}
+
+function foreach(){
+  console.log(data)
 }
 
 function isNull(key) {
@@ -118,6 +127,9 @@ const object = {
 }
 
 module.exports = {
+
+  alls,
+
   set,
   get,
   has,
