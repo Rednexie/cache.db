@@ -30,18 +30,12 @@ function size(){
     return data.size
 }
 
-function all(){
-  return Array.from(data, ([key, value]) => ({ [key]: value }));
-}
-
-
-function alls() {
+function all() {
   return Array.from(data, ([k, val]) => ({ key: k, value: val }));
 }
 
 function obj(){
-  // {..data}
-  return Array.from(data, ([key, value]) => ({ [key]: value }));
+  return Array.from(data, ([key, value]) => ({ [key]: value }))[0];
 }
 
 function keys() {
@@ -59,10 +53,6 @@ function forEach(callback) {
   data.forEach((value, key) => {
     callback(value, key);
   });
-}
-
-function foreach(){
-  console.log(data)
 }
 
 function isNull(key) {
@@ -127,9 +117,6 @@ const object = {
 }
 
 module.exports = {
-
-  alls,
-
   set,
   get,
   has,
@@ -165,7 +152,7 @@ class CacheDB{
     
     
 
-     map(){
+    map(){
     return this.data
     }
 
@@ -194,12 +181,11 @@ class CacheDB{
     }
 
      all(){
-    return Array.from(this.data, ([key, value]) => ({ [key]: value }));
+      return Array.from(data, ([k, val]) => ({ key: k, value: val }));
     }
 
      obj(){
-    // {..this.data}
-    return Array.from(this.data, ([key, value]) => ({ [key]: value }));
+    return Array.from(this.data, ([key, value]) => ({ [key]: value }))[0];
     }
 
      keys() {
